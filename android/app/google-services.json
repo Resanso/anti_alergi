@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "366730116086",
+    "project_id": "antialergi-2f0c2",
+    "storage_bucket": "antialergi-2f0c2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366730116086:android:3e1f5907865634c980e5d7",
+        "android_client_info": {
+          "package_name": "com.example.antialergi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBULFGuodMMxxWHA3pnxCFQM31bXIOCQiw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../models/user_model.dart';
+import '../../utils/logger.dart';
 
 class DatabaseService {
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-
+  // Using the instance directly since we're accessing it through the collection reference below
   // Collection references
   final CollectionReference usersCollection = FirebaseFirestore.instance
       .collection('users');
@@ -13,11 +13,11 @@ class DatabaseService {
     try {
       await usersCollection.doc(user.uid).set(user.toJson());
     } catch (e) {
-      print('Error creating user document: $e');
+      Logger.error('Error creating user document', e);
       // Check if the error is related to database not existing
       if (e.toString().contains('NOT_FOUND') ||
           e.toString().contains('database (default) does not exist')) {
-        print(
+        Logger.error(
           'Firestore database does not exist. Please create it in the Firebase Console.',
         );
       }
@@ -34,11 +34,11 @@ class DatabaseService {
       }
       return null;
     } catch (e) {
-      print('Error getting user data: $e');
+      Logger.error('Error getting user data', e);
       // Check if the error is related to database not existing
       if (e.toString().contains('NOT_FOUND') ||
           e.toString().contains('database (default) does not exist')) {
-        print(
+        Logger.error(
           'Firestore database does not exist. Please create it in the Firebase Console.',
         );
       }
@@ -55,11 +55,11 @@ class DatabaseService {
         'updatedAt': DateTime.now(),
       });
     } catch (e) {
-      print('Error updating user data: $e');
+      Logger.error('Error updating user data', e);
       // Check if the error is related to database not existing
       if (e.toString().contains('NOT_FOUND') ||
           e.toString().contains('database (default) does not exist')) {
-        print(
+        Logger.error(
           'Firestore database does not exist. Please create it in the Firebase Console.',
         );
       }
@@ -75,12 +75,12 @@ class DatabaseService {
           .snapshots()
           .map((doc) => doc.exists ? UserModel.fromFirestore(doc) : null)
           .handleError((error) {
-            print('Error in user stream: $error');
+            Logger.error('Error in user stream', error);
             // Return null when there's an error
             return null;
           });
     } catch (e) {
-      print('Error setting up user stream: $e');
+      Logger.error('Error setting up user stream', e);
       // Return an empty stream in case of setup error
       return Stream.value(null);
     }

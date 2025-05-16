@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'firebase_options.dart';
 import 'app/data/services/auth_service.dart';
 import 'app/routes/app_pages.dart';
+import 'app/theme/app_theme.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +19,13 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Anti Alergi App',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.system,
       initialRoute: _getInitialRoute(),
       getPages: AppPages.routes,
       debugShowCheckedModeBanner: false,

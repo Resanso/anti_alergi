@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:antialergi/app/routes/app_pages.dart';
 import 'package:antialergi/app/data/services/database_service.dart';
 import 'package:antialergi/app/data/models/user_model.dart';
+import 'package:antialergi/app/utils/logger.dart';
 
 class AuthService extends GetxService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -42,7 +43,7 @@ class AuthService extends GetxService {
           );
         }
       } catch (e) {
-        print('Error in _setInitialScreen: $e');
+        Logger.error('Error in _setInitialScreen', e);
         // Create a basic user model even if there's an error
         userModel.value = UserModel(
           uid: user.uid,
@@ -88,12 +89,12 @@ class AuthService extends GetxService {
           );
 
           // Save user data to Firestore
-          await _databaseService.createUserDocument(user);
-
-          // Update local user model
+          await _databaseService.createUserDocument(
+            user,
+          ); // Update local user model
           userModel.value = user;
         } catch (firestoreError) {
-          print('Error creating Firestore document: $firestoreError');
+          Logger.error('Error creating Firestore document', firestoreError);
           // Even if Firestore fails, we should consider the registration successful
           // since the Auth account was created successfully
 

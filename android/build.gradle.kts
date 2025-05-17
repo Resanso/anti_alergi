@@ -13,7 +13,7 @@ subprojects {
     project.layout.buildDirectory.value(newSubprojectBuildDir)
 }
 subprojects {
-    project.evaluationDependsOn(":app")
+    project.evaluationDependsOn(":feature")
 }
 
 tasks.register<Delete>("clean") {

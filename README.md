@@ -11,7 +11,7 @@ This project uses a comprehensive design system to maintain consistency across t
 - **Spacing**: An 8-point grid system with specific spacing values
 - **Border Radius**: Consistent rounding for UI elements
 
-For detailed information about the design system, see the [Design System Documentation](lib/app/theme/design_system.md).
+For detailed information about the design system, see the [Design System Documentation](lib/core/theme/design_system.md).
 
 ## Implementation
 

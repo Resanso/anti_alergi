@@ -46,7 +46,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '366730116086',
     projectId: 'antialergi-2f0c2',
     authDomain: 'antialergi-2f0c2.firebaseapp.com',
-    storageBucket: 'antialergi-2f0c2.firebasestorage.app',
+    storageBucket: 'antialergi-2f0c2.firebasestorage.feature',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
@@ -54,7 +54,7 @@ class DefaultFirebaseOptions {
     appId: '1:366730116086:android:3e1f5907865634c980e5d7',
     messagingSenderId: '366730116086',
     projectId: 'antialergi-2f0c2',
-    storageBucket: 'antialergi-2f0c2.firebasestorage.app',
+    storageBucket: 'antialergi-2f0c2.firebasestorage.feature',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
@@ -62,7 +62,7 @@ class DefaultFirebaseOptions {
     appId: '1:366730116086:ios:f11992af462a6ee880e5d7',
     messagingSenderId: '366730116086',
     projectId: 'antialergi-2f0c2',
-    storageBucket: 'antialergi-2f0c2.firebasestorage.app',
+    storageBucket: 'antialergi-2f0c2.firebasestorage.feature',
     iosBundleId: 'com.example.antialergi',
   );
 
@@ -71,7 +71,7 @@ class DefaultFirebaseOptions {
     appId: '1:366730116086:ios:f11992af462a6ee880e5d7',
     messagingSenderId: '366730116086',
     projectId: 'antialergi-2f0c2',
-    storageBucket: 'antialergi-2f0c2.firebasestorage.app',
+    storageBucket: 'antialergi-2f0c2.firebasestorage.feature',
     iosBundleId: 'com.example.antialergi',
   );
 
@@ -81,6 +81,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '366730116086',
     projectId: 'antialergi-2f0c2',
     authDomain: 'antialergi-2f0c2.firebaseapp.com',
-    storageBucket: 'antialergi-2f0c2.firebasestorage.app',
+    storageBucket: 'antialergi-2f0c2.firebasestorage.feature',
   );
 }
